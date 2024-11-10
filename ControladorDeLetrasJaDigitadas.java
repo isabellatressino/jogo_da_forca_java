@@ -76,6 +76,8 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
             ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
             throws Exception // construtor de cópia
     {
+
+        if (controladorDeLetrasJaDigitadas == null) throw new Exception ("não valido");
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
         this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
 
