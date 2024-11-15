@@ -3,7 +3,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
 
     public ControladorDeLetrasJaDigitadas() {
         // torna this.letrasJaDigitadas igual ao String vazio
-        this.letrasJaDigitadas = " ";
+        this.letrasJaDigitadas = "";
     }
 
     public boolean isJaDigitada(char letra) {
@@ -40,8 +40,8 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
 
         String concat = "";
         for (int i = 0; i < this.letrasJaDigitadas.length(); i++) {
-            concat += this.letrasJaDigitadas.charAt(i); //guarda em concat
-            if (i != this.letrasJaDigitadas.length() - 1) { // virgula
+            concat += this.letrasJaDigitadas.charAt(i);
+            if (i != this.letrasJaDigitadas.length() - 1) {
                 concat += ",";
             }
         }
@@ -51,12 +51,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
 
     public boolean equals(Object obj) {
         // verificar se this e obj são iguais
-        if(this == obj) return true;
-        if(obj == null) return false;
-        if(getClass() != obj.getClass()) return false;
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
 
         ControladorDeLetrasJaDigitadas n = (ControladorDeLetrasJaDigitadas) obj;
-        if(n.letrasJaDigitadas != this.letrasJaDigitadas) return false;
+        if (n.letrasJaDigitadas != this.letrasJaDigitadas) return false;
 
         return true;
     }
@@ -67,7 +67,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
 
         hash = 13 * hash + new String(this.letrasJaDigitadas).hashCode();
 
-        if(hash<0) hash = -hash;
+        if (hash < 0) hash = -hash;
 
         return hash;
     }
@@ -77,19 +77,18 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable {
             throws Exception // construtor de cópia
     {
 
-        if (controladorDeLetrasJaDigitadas == null) throw new Exception ("não valido");
+        if (controladorDeLetrasJaDigitadas == null) throw new Exception("Não valido");
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
         this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
-
     }
 
     public Object clone() {
         // criar uma cópia do this com o construtor de cópia e retornar
         ControladorDeLetrasJaDigitadas obj = null;
 
-        try{
+        try {
             obj = new ControladorDeLetrasJaDigitadas(this);
-        }catch (Exception e) {
+        } catch (Exception e) {
             //não trata, this nunca é null
         }
 
